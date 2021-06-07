@@ -1,0 +1,5 @@
+<?php
+    $buttonName  = !empty($this->name) ? "id=\"{$this->name}\" name=\"{$this->name}\"" : '';
+    $buttonClass = !empty($this->css_class) ? "class=\"image-button  {$this->css_class}\"" : 'class="button"';
+?>
+<button <?=$buttonName;?> <?=$buttonClass;?> <?=$this->attributes;?>><?=$this->value;?></button>

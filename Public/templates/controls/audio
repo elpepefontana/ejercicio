@@ -1,0 +1,8 @@
+<?php
+    $audioName = empty($this->name) ? "id=\"{$this->name}\"" : '';
+    $volume = $this->volume === 10 ? "1" : ".{$this->volume}";
+    $source = !empty($this->source) ? "data-src=\"{$this->source}\"" : "";
+    $color = $this->color === 'def' ? "" : "class=\"light\"";
+    $autoplay = $this->autoPlay ? "data-autoplay=\"true\"" : "";
+?>
+<audio <?=$audioName;?> data-role=\"audio\"" <?=$source;?> <?=$color;?> <?=$autoplay;?> data-volume="<?=$volume;?>"></audio>

@@ -1,0 +1,27 @@
+<?php
+
+namespace System\Renderer\ControlRenderer;
+
+use System\Core\Controls as Controls;
+
+use System\Renderer\ControlRenderer\ControlInterface as ControlInterface;
+
+class Blanc extends AbstractContent implements ControlInterface
+{
+    public function __construct($typeData, $data)
+    {
+        parent::__construct($typeData, $data);
+        $this->setData();
+    }
+    
+    private function setData()
+    {
+        foreach ($this->typeData as $key => $value) {
+            if (!property_exists(__CLASS__, $key)) {
+                continue;
+            }
+            $this->$key = $value;
+        }
+    }
+
+}

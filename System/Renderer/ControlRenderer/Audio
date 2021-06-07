@@ -1,0 +1,44 @@
+<?php
+
+namespace System\Renderer\ControlRenderer;
+
+use System\Renderer\ControlRenderer\ControlInterface as ControlInterface;
+
+class Audio extends AbstractControl implements ControlInterface
+{
+    private $source;
+    private $volume = '5';
+    private $color = 'def';
+    private $autoPlay = true;
+    
+    public function __construct($typeData, $data)
+    {
+        parent::__construct($typeData, $data);
+        $this->setData();
+        parent::addData('source', $data['value']);
+    }
+    
+    private function setData()
+    {
+        foreach ($this->typeData as $key => $value) {
+            if (!property_exists(__CLASS__, $key)) {
+                continue;
+            }
+            $this->$key = $value;
+        }
+    }
+    
+    public function render()
+    {
+        $audioName   = empty($this->name)   ? "id=\"{$this->name}\"" : '';
+        $volume      = $this->volume === 10 ? "1" : ".{$this->volume}";
+        $content     = "<audio {$audioName} data-role=\"audio\"";
+        $content    .= !empty($this->source) ? "data-src=\"{$this->source}\"" : "";
+        $content    .= $this->color === 'def' ? "" : "class=\"light\"";
+        $content    .= $this->autoPlay ? "data-autoplay=\"true\"" : "";
+        $content    .= "data-volume=\"{$volume}\"";
+        $content    .= "></audio>\n";
+        return $content;
+    }
+
+}

@@ -1,0 +1,31 @@
+<?php
+
+namespace System\Renderer\ControlRenderer;
+
+use System\Renderer\ControlRenderer\ControlInterface as ControlInterface;
+
+class ImageButton extends AbstractContent implements ControlInterface
+{
+    public function __construct($typeData, $data)
+    {
+        parent::__construct($typeData, $data);
+        $this->setData();
+    }
+    
+    private function setData()
+    {
+        foreach ($this->typeData as $key => $value) {
+            if (!property_exists(__CLASS__, $key)) {
+                continue;
+            }
+            $this->$key = $value;
+        }
+    }
+    
+    public function render()
+    {
+        $buttonName  = !empty($this->name) ? "id=\"{$this->name}\" name=\"{$this->name}\"" : '';
+        $buttonClass = !empty($this->css_class) ? "class=\"image-button  {$this->css_class}\"" : 'class="button"';
+        return "<button {$buttonName} {$buttonClass} {$this->attributes}>{$this->content}</button>";
+    }
+}

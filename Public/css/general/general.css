@@ -1,0 +1,171 @@
+.main_background {
+    width: 100%;
+    height: 1500px;
+    
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 1px 150px;
+    
+    overflow: hidden;
+    backface-visibility: hidden;
+    
+    animation: slideBg 20s linear infinite 0s;
+    animation-timing-function: ease-in-out;
+    
+    
+    -webkit-filter: blur(0px);
+    -moz-filter: blur(0px);
+    -o-filter: blur(0px);
+    -ms-filter: blur(0px);
+    filter: blur(0px); 
+    
+}
+
+.glory_text{
+    font-family: 'Indie Flower', serif;
+    font-size: 20px;
+    color: #16264c;
+}
+
+.detail_panel_cell{
+    font-family: 'Indie Flower', serif;
+    text-align: center;
+    font-size: 17px;
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+}
+
+.detail_title_panel_cell{
+    font-family: 'Indie Flower', serif;
+    text-align: center;
+    font-size: 25px;
+    padding-top: 20px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+}
+
+.title_background{
+    background: rgba(255,175,75,1);
+    background: -moz-linear-gradient(left, rgba(102, 153, 204,1) 0%, rgba(250,215,239,0) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(250,215,239,1)), color-stop(100%, rgba(255,255,255,0)));
+    background: -webkit-linear-gradient(left, rgba(102, 153, 204,1) 0%, rgba(250,215,239,0) 100%);
+    background: -o-linear-gradient(left, rgba(102, 153, 204,1) 0%, rgba(250,215,239,0) 100%);
+    background: -ms-linear-gradient(left, rgba(102, 153, 204,1) 0%, rgba(250,215,239,0) 100%);
+    background: linear-gradient(to right, rgba(102, 153, 204,1) 0%, rgba(250,215,239,0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#	6699cc', endColorstr='#f5f5f5', GradientType=1 );
+}
+
+.text_background{
+    background: rgba(255,175,75,1);
+    background: -moz-linear-gradient(left, rgba(255,255,255,0) -10%, rgba(255,255,255,1) 200%);
+    background: -webkit-gradient(left top, right top, color-stop(-10%, rgba(255,255,255,1)), color-stop(200%, rgba(255,255,255,1)));
+    background: -webkit-linear-gradient(left, rgba(255,255,255,0) -10%, rgba(255,255,255,1) 200%);
+    background: -o-linear-gradient(left, rgba(255,255,255,0) -10%, rgba(255,255,255,1) 200%);
+    background: -ms-linear-gradient(left, rgba(255,255,255,0) -10%, rgba(255,255,255,1) 200%);
+    background: linear-gradient(to right, rgba(255,255,255,0) -10%, rgba(255,255,255,1) 200%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffaf4b', endColorstr='#f5f5f5', GradientType=1 );
+}
+
+@keyframes slideBg {
+    0%{
+        background: linear-gradient(90deg, rgba(255,255,255,0) -10%, rgba(250, 215, 239,1) 30%), url("");
+    }
+    50%{
+        background: linear-gradient(90deg, rgba(255,255,255,0) -10%, rgba(250, 215, 239,1) 30%), url("");
+    }
+    100%{
+        background: linear-gradient(90deg, rgba(255,255,255,0) -10%, rgba(250, 215, 239,1) 34%), url("");
+    }
+}
+
+
+/* Context menu */
+.context-menu{
+    font-family: Indie Flower,serif;
+    display: none;
+    position: absolute;
+    border: 1px solid brown;
+    width: 200px;
+    background: white;
+    box-shadow: 4px 4px 2px lightgrey;
+    z-index: 500;
+    
+}
+
+.context-menu ul{
+    list-style: none;
+    padding: 2px;
+}
+
+.context-menu ul li{
+    padding: 5px 2px;
+    margin-bottom: 3px;
+    color: black;
+    font-weight: bold;
+    background-color: white;
+
+}
+
+.context-menu ul li:hover{
+    cursor: pointer;
+    background-color: #FAD7EF;
+}
+
+.context-menu ul li no-li-hover:hover{
+    cursor: pointer;
+    background-color: white;
+}
+
+
+.login-form {
+    width: 700px;
+    background-color: #fa96c0;
+    height: auto;
+    top: 50%;
+    margin-top: -160px;
+} 
+
+.Modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.Modal-content {
+    background-color: #fefefe;
+    margin: 5% auto; /* 15% from the top and centered */
+    padding: 10px;
+    border: 1px solid #888;
+    width: 70%; /* Could be more or less, depending on screen size */
+}
+
+.ModalClose {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.ModalClose:hover,
+.ModalClose:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+    

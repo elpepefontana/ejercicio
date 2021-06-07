@@ -1,0 +1,40 @@
+<?php
+
+namespace System\Renderer\ControlRenderer;
+
+use System\Core\Controls as Controls;
+
+class DirUpload extends AbstractContent implements ContentInterface
+{
+    private $title;
+    
+    public function __construct($typeData, $data)
+    {
+        parent::__construct($typeData, $data);
+        $this->setData();
+    }
+    
+    private function setData()
+    {
+        foreach ($this->typeData as $key => $value) {
+            if (!property_exists(__CLASS__, $key)) {
+                continue;
+            }
+            $this->$key = $value;
+        }
+    }
+    
+    public function render(): string
+    {
+        $select     = Controls::drawArrayToSelect("slt_destenyfolder", '', $data, '', true, '', 'data-prepend="Seleccione"');
+        $selectTitleDiv  = Controls::drawDiv("div_{$this->typeData[0]['name']}_title", 'd-inline mx-3 mb-3', "{$params['titulo']}: ", 'style="width: 20%;display:inline-block;"');
+        $selectDiv  = Controls::drawDiv("div_{$config[0]['name']}", 'mx-3 mb-3', $selectTitleDiv . $select, '');
+        $dirUpl     = Controls::drawDirectoryUpload("dirupl_{$config[0]['name']}");
+        $button     = Controls::drawSubmitButton("sbt_{$config[0]['name']}", "button success m-3", 'Cargar', 'data-button-title="Seleccione"');
+        $buttonDiv  = Controls::drawDiv("div_{$config[0]['name']}", 'd-flex flex-justify-center', $button, '');
+        $form       = Controls::drawForm("frm_{$config[0]['name']}", 'POST', '', $selectDiv . $dirUpl .$buttonDiv , 'enctype="multipart/form-data"');
+        $content   .= Controls::drawModal("{$config[0]['name']}Modal", 'Subida masiva', 'bg-darkBlue fg-white', $form , '', '', '500');
+        return $content;
+    }
+
+}

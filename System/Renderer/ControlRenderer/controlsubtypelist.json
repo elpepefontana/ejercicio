@@ -1,0 +1,21 @@
+{
+    "PRIMARY" : "Primary",
+    "SECONDARY": "Secondary",
+    "BUTTON": "Button",
+    "IMAGEBUTTON" : "ImageButton",
+    "TEXT" : "Text",
+    "MODAL" :"Modal",
+    "MASSUPLMODAL" : "DirUpload",
+    "DIRUPLMODAL" : "DirUpload",
+    "JTABLE" : "Jtable",
+    "IMAGE" : "Image",
+    "IMAGEMAGNIFIER" : "ImageMagnifier",
+    "FIGURE" : "Figure",
+    "MENU" : "Menu",
+    "VIDEO" : "Video",
+    "AUDIO" : "Audio",
+    "LISTS" : "Lists",
+    "ADMINGRID" : "AdminHtml",
+    "FREE" : "Free",
+    "EMPTY" : "Blanc"
+}

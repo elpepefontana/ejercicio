@@ -1,0 +1,29 @@
+<?php
+
+namespace System\Storage;
+
+class Update implements StorageReturnInterface
+{
+    private $result;
+    private $data;
+    
+    private $error;
+    
+    public function __construct(StorageErrorInterface $error, array $data) 
+    {
+        $this->error = $error;
+        $this->data = $data;
+    }
+    
+    public function retrieve(): array
+    {
+        if (!$this->data['result']) {
+            return $this->error->data();
+        }
+        return array(
+            'Result' => 'OK',
+            'TotalRecordCount' => 1,
+            'Id' => $this->data['id']
+        );
+    }
+}
