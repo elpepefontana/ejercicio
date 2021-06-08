@@ -41,7 +41,7 @@ require_once TEMPLATE_PATH . '../headers/adminheader.php';
         <div class="cell-md-12 text-center">PHP 7.2.32</div>
     </div>
     <div class="row">
-        <div class="cell-md-12 text-center">MySql</div>
+        <div class="cell-md-12 text-center">MariaDB 10.4.13</div>
     </div>
     <div class="row">
         <div class="cell-md-12 text-center"><a href="https://metroui.org.ua/" style="">METRO UI CSS</a> | <a href="https://jtable.org/">JTable</a></div>
